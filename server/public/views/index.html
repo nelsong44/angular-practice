@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="styles/main.css">
     <title>Angular Practice</title>
   </head>
-  <body>
-
+  <!-- linking angular app to html file -->
+  <body ng-app="myApp">
+    <input type="text" ng-model="userName">
+    <input type="text" ng-model="userMessage">
+    <div ng-controller="OnloadController as control">
+      <button ng-click="control.displayInfo(userName, userMessage)">View Info</button>
+    </div>
+    <p>{{ }}</p>
+    <p>{{ }}</p>
   </body>
 </html>
