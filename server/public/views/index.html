@@ -11,10 +11,20 @@
   <body ng-app="myApp">
     <input type="text" ng-model="userName">
     <input type="text" ng-model="userMessage">
-    <div ng-controller="OnloadController as control">
+    <div ng-controller="LoadController as control">
       <button ng-click="control.displayInfo(userName, userMessage)">View Info</button>
-    </div>
-    <p>{{ }}</p>
-    <p>{{ }}</p>
+
+      <!-- first approach...
+      <p>{{control.info.userMessage}}</p>
+      <p>{{control.info.userMessage}}</p>
+      ...end first approach -->
+
+      <!-- second approach -->
+      <div ng-repeat="userInfo in control.userArray">
+        {{userInfo.userName}}
+        {{userInfo.userMessage}}
+      </div>
+      <!-- end second approach -->
+
   </body>
 </html>
